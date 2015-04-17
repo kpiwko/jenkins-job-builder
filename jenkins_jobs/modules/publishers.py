@@ -837,6 +837,18 @@ def junit(parser, xml_parent, data):
         XML.SubElement(datapublisher,
                        'hudson.plugins.claim.ClaimTestDataPublisher')
 
+def junit_diff(parser, xml_parent, data):
+    """yaml: junit-diff
+    Publish JUnitDiff test results. Requires the `JUNitDiff Plugin.
+    <https://github.com/vjuranek/junit-diff-plugin>`_
+
+    Full example:
+
+      publishers:    
+        - junit-diff
+
+    """
+    XML.SubElement(xml_parent, 'hudson.plugins.junit__diff.JUnitDiff')
 
 def xunit(parser, xml_parent, data):
     """yaml: xunit
